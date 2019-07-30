@@ -29,7 +29,7 @@ jumbotron = dbc.Jumbotron(
                 html.P(
                     "A Naive Classifier Built on Python"
                 ),
-                html.P(dbc.Button("GitHub", color="primary"), className="lead")
+                html.P(dbc.Button(html.A("GitHub", href = "https://github.com/mdylan2/naive_bayes_sms_classifier"), color="primary"), className="lead")
             ],
         )
 
@@ -94,12 +94,12 @@ def classify(n_clicks, text):
         else:
             answer = model.predict([text])
             if answer == 1:
-                return dbc.Button("Asshole. Do not respond to this spammer", color = "danger", block = True, size = "lg")
+                return dbc.Button("Spammer. Do not respond.", color = "danger", block = True, size = "lg")
             elif answer == 0:
-                return dbc.Button("Not an asshole. Respond to this person.", color = "success", block = True, size = "lg")
+                return dbc.Button("Not a spammer. Respond to this person.", color = "success", block = True, size = "lg")
             else:
                 return "Error with the Model. Please try again later. :)"
 
 if __name__ == '__main__':
     model = joblib.load('assets/ml_models/training_pipeline.sav')
-    app.server.run(debug=True, port = 8050, host = '192.168.1.36')
+    app.server.run(debug=False)

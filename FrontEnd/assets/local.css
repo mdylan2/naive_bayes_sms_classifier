@@ -9,3 +9,12 @@ body {
     padding: 2rem;
 
 }
+
+a {
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
