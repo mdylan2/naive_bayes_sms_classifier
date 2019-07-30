@@ -5,6 +5,8 @@ Users can type in a message in a text box and the model will print whether or no
 
 The application was designed using Pandas, Scikit Learn and Dash.
 
+Just a heads up, the model is VERY naive because I didn't want to spend too much time on this so please do not judge.
+
 ## Files
 Here's a list of files in the directories:
 ### `FrontEnd`
@@ -33,6 +35,14 @@ pip install -r requirements.txt
 ```
 python app.py
 ```
+
+## Frontend Appearance
+### `Spam Message`
+![Spam](images/2.PNG)
+
+### `Non-Spam Message`
+![Non-Spam](images/3.PNG)
+
 
 ## Questions Or Contributions
 Always open to any questions or contributions! Please reach out to me on Github.
