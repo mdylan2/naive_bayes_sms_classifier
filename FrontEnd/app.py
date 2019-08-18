@@ -1,21 +1,19 @@
 # Importing modules
 import dash
 from dash.dependencies import Input, Output, State
-import dash_core_components as dcc
-import dash_html_components as html
 import dash_bootstrap_components as dbc
-from model import textParser
 from sklearn.externals import joblib
 
-# Importing from other files
+# Importing local files
 import view
+from model import textParser
 
 # Creating the server and serving local CSS
 app = dash.Dash(__name__)
 app.server.config["SERVE_LOCALLY"] = True
 
 # Assigning the app layout
-app.layout = html.Div([view.navbar, dbc.Container([view.jumbotron, view.body], className = "main")])
+app.layout = view.layout
 
 # Callback for classifying spam versus not spam
 @app.callback(
@@ -32,13 +30,13 @@ def classify(n_clicks, text):
         else:
             answer = model.predict([text])
             if answer == 1:
-                return dbc.Button("Asshole. Do not respond to this spammer", color = "danger", block = True, size = "lg")
+                return dbc.Button("Spammer. Do not respond.", color = "danger", block = True, size = "lg")
             elif answer == 0:
-                return dbc.Button("Not an asshole. Respond to this person.", color = "success", block = True, size = "lg")
+                return dbc.Button("Not a spammer. Respond to this person.", color = "success", block = True, size = "lg")
             else:
                 return "Error with the Model. Please try again later. :)"
 
 # Loading the model and running the app
 if __name__ == '__main__':
     model = joblib.load('assets/ml_models/training_pipeline.sav')
-    app.server.run(debug=True, port = 8050, host = '192.168.1.36')
+    app.server.run(debug=True)
