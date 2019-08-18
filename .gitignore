@@ -104,4 +104,4 @@ venv.bak/
 .mypy_cache/
 
 # Test notebooks
-email-classifier.ipynb
+Notebook/email-classifier.ipynb
