@@ -5,7 +5,7 @@ Users can type in a message in a text box and the model will print whether or no
 
 The application was designed using Pandas, Scikit Learn and Dash.
 
-Just a heads up, the model is VERY naive because I didn't want to spend too much time on this so please do not judge.
+Just a heads up, the model is VERY naive.
 
 ## Files
 Here's a list of files in the directories:
