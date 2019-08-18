@@ -31,7 +31,8 @@ git clone https://github.com/mdylan2/naive_bayes_sms_classifier.git
 ```
 pip install -r requirements.txt
 ```
-4) Navigate into the FrontEnd folder and run the following command:
+4) Navigate into the Notebook folder and run the entire notebook to generate the spam classification model 
+5) Navigate into the FrontEnd folder and run the following command:
 ```
 python app.py
 ```
