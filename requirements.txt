@@ -20,7 +20,7 @@ jsonschema==3.0.1
 jupyter-core==4.5.0
 MarkupSafe==1.1.1
 nbformat==4.4.0
-nltk==3.4.4
+nltk>=3.4.5
 numpy==1.16.4
 pandas==0.24.2
 plotly==3.10.0
